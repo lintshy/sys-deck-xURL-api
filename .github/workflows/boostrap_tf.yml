@@ -16,7 +16,7 @@ jobs:
 
       - name: Init & Apply
         run: |
-          cd terraform/boostrap
+          cd terraform/bootstrap
           terraform init -backend-config=test.config
           terraform plan -out=tfplan
           terraform apply -auto-approve tfplan
