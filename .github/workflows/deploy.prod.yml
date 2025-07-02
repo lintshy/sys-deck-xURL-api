@@ -26,7 +26,7 @@ jobs: #Workflow run is made up of one or more jobs
           # Created the Secrets Under the Repo only with These Variables
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ env.AWS_REGION }} #--> Use environment variable for region
+          aws-region: ${{ secrets.AWS_REGION }} #--> Use environment variable for region
       # Step 3: Install Terraform
       - name: Terraform
         uses: hashicorp/setup-terraform@v2
