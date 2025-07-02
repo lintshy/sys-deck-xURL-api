@@ -1,0 +1,22 @@
+# .github/workflows/bootstrap-backend.yml
+name: Bootstrap Terraform Backend
+
+on:
+  workflow_dispatch:
+
+jobs:
+  bootstrap:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+
+      - name: Init & Apply
+        run: |
+          cd terraform/boostrap
+          terraform init -backend-config=test.config
+          terraform plan -out=tfplan
+          terraform apply -auto-approve tfplan
