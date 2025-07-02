@@ -3,10 +3,10 @@ name: Deploy Test #Name of the Workflow
 on: #Name of the GitHub event that triggers the workflow
   push: #On Push Event We need to take action
     branches: #Now we need to specify the branch name
-      - main
+      - master
 
 jobs: #Workflow run is made up of one or more jobs
-  Deploy_dungeon_brawler_node:
+  Deploy_xurl_api:
     runs-on: ubuntu-latest #Through which Server OS we need to Work (type of machine to run the job on)
     steps:
       #Using versioned actions

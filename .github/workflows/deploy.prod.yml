@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 jobs: #Workflow run is made up of one or more jobs
-  deploy_lambda:
+  deploy_xurl_api_prod:
     runs-on: ubuntu-latest #Through which Server OS we need to Work (type of machine to run the job on)
     steps:
       #Using versioned actions
