@@ -6,6 +6,7 @@ on:
 jobs: #Workflow run is made up of one or more jobs
   deploy_xurl_api_prod:
     runs-on: ubuntu-latest #Through which Server OS we need to Work (type of machine to run the job on)
+    environment: production # Reference to the production environment
     steps:
       #Using versioned actions
       - uses: actions/checkout@v2 # --> Reference a specific version

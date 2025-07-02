@@ -7,7 +7,8 @@ on: #Name of the GitHub event that triggers the workflow
 
 jobs: #Workflow run is made up of one or more jobs
   Deploy_xurl_api:
-    runs-on: ubuntu-latest #Through which Server OS we need to Work (type of machine to run the job on)
+    runs-on: ubuntu-latest
+    environment: test #Through which Server OS we need to Work (type of machine to run the job on)
     steps:
       #Using versioned actions
       - uses: actions/checkout@v2 # --> Reference a specific version
@@ -27,7 +28,7 @@ jobs: #Workflow run is made up of one or more jobs
           # Created the Secrets Under the Repo only with These Variables
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ env.AWS_REGION }} #--> Use environment variable for region
+          aws-region: ${{ env.AWS_REGION }} #--> Use environment variable from 'test' environment
       # Step 3: Install Terraform
       - name: Terraform
         uses: hashicorp/setup-terraform@v2
